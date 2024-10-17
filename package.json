@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A Quasar Project",
   "productName": "Quasar App",
-  "author": "Nikolay Mamashin <mamashin@gmail.com>",
+  "author": "Renato Lucena <cpdrenato@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "quasar dev",
@@ -13,15 +13,22 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
+    "@vue/composition-api": "^1.7.2",
+    "apexcharts": "^3.54.1",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "dotenv": "^16.0.3",
     "pinia": "^2.0.11",
+    "pinia-plugin-persistedstate": "^4.1.1",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
     "quasar": "^2.6.0",
+    "v-charts": "^1.19.0",
+    "v-charts-v2": "^2.0.9",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.0"
+    "vue-router": "^4.0.0",
+    "vue-lodash": "^2.1.2",
+    "vue-sweetalert2": "^5.0.11"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.14",

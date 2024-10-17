@@ -6,7 +6,12 @@ const routes = [
     children: [
       { path: '', meta: {auth: true} , component: () => import('pages/IndexPage.vue') },
       { path: '/login', component: () => import('pages/LoginPage.vue') },
-      { path: '/logout', component: () => import('pages/LogoutPage.vue') }
+      { path: '/register', component: () => import('pages/UserRegister.vue') },
+      { path: '/profile', meta: { auth: true }, component: () => import('pages/UserProfile.vue') },
+      { path: '/logout', component: () => import('pages/LogoutPage.vue') },
+      { path: '/stock-query', meta: { auth: true }, component: () => import('pages/StockQuery.vue') },
+      { path: '/stock-entry', meta: { auth: true }, component: () => import('pages/StockEntryForm.vue') },
+      { path: '/product-form', meta: { auth: true }, component: () => import('pages/ProductForm.vue') }
     ]
   },
 
