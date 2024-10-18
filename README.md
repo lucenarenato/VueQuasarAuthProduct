@@ -4,6 +4,16 @@
 
 `docker-compose -f ./docker-compose.dev.yml up --build --force-recreate --no-dep`
 
+```
+src/
+├── components/
+│   ├── ChartComponent.vue
+│   ├── EntradaSaidaEstoqueUsuario.vue
+│   ├── EntradaSaidaEstoqueProduto.vue
+│   ├── TopProdutosMaisEstoque.vue
+│   └── TopProdutosMenosEstoque.vue
+```
+
 - https://stackoverflow.com/questions/70034269/how-to-use-tailwind-css-with-quasar-framework
 
 ### Enjoy :)

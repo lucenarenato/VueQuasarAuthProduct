@@ -6932,6 +6932,11 @@ vue-sweetalert2@^5.0.11:
   dependencies:
     sweetalert2 "11.4.4"
 
+vue3-apexcharts@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/vue3-apexcharts/-/vue3-apexcharts-1.7.0.tgz#45eb110af8c51164ce80329838e5e210901a7b87"
+  integrity sha512-BmWoS8+x5XLCtk2ml7rLVO+QU+fjgQUUCjUXSFW9cNQpCMa5Z0eRPvZjvYLt5aDKNREtuZoidlG9WRjZ/Af7lA==
+
 vue@^3.0.0:
   version "3.5.12"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.5.12.tgz#e08421c601b3617ea2c9ef0413afcc747130b36c"

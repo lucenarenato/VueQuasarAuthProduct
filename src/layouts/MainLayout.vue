@@ -50,6 +50,12 @@ q-layout(view="lHh Lpr lFf")
           q-item-section
             q-item-label Formulário de Produto
 
+        q-item(clickable v-ripple to="/dashboard")
+          q-item-section(avatar)
+            q-icon(name="dashboard")
+          q-item-section
+            q-item-label Dashboard
+
     q-page-container
       router-view
 </template>

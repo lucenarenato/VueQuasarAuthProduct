@@ -18,15 +18,15 @@ export const useApi = (url = '', method = 'GET', params = {}) => {
       };
     })
     .catch((err) => {
-      error.value = {
+      /*error.value = {
         status: err.response?.status || 500,
         message: err.response?.data || 'Ocorreu um erro ao processar a solicitação.'
-      };
+      };*/
       console.error('Erro na requisição:', error.value);
     })
     .finally(() => {
       loading.value = false;
     });
 
-  return { response, error, loading };
+  return { response, loading };
 };

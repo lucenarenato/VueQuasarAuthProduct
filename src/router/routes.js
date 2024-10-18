@@ -11,7 +11,9 @@ const routes = [
       { path: '/logout', component: () => import('pages/LogoutPage.vue') },
       { path: '/stock-query', meta: { auth: true }, component: () => import('pages/StockQuery.vue') },
       { path: '/stock-entry', meta: { auth: true }, component: () => import('pages/StockEntryForm.vue') },
-      { path: '/product-form', meta: { auth: true }, component: () => import('pages/ProductForm.vue') }
+      { path: '/product-form', meta: { auth: true }, component: () => import('pages/ProductForm.vue') },
+      { path: '/dashboard', meta: { auth: true }, component: () => import('src/components/StockDashboard.vue') }
+
     ]
   },
 

@@ -27,21 +27,3 @@ export default boot(({ app }) => {
 })
 
 export { axios, axiosInstance }
-
-// const api = axios.create({ baseURL: process.env.API_HOST })
-// const axiosInstance = axios.create({ baseURL: process.env.API_HOST })
-
-// axiosInstance.interceptors.request.use(async (response) => {
-//   if (localStorage.getItem('access_token')) {
-//     const token = localStorage.getItem('access_token')
-//     axiosInstance.defaults.headers.common.Authorization = `Bearer ${token}`
-//     response.headers.common.Authorization = `Bearer ${token}`
-//     return response
-//   }
-//   if (!window.location.href.endsWith('login')) {
-//    // If the current url is not login and all tokens are stale or missing - redirect to login page. A hack, of course, but it works
-//     document.location.href = '/#/login'
-//     return Promise.reject()
-//   }
-//   return response
-// })
