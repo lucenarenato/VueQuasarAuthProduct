@@ -4,5 +4,6 @@
 
 `docker-compose -f ./docker-compose.dev.yml up --build --force-recreate --no-dep`
 
-### Enjoy :)
+- https://stackoverflow.com/questions/70034269/how-to-use-tailwind-css-with-quasar-framework
 
+### Enjoy :)

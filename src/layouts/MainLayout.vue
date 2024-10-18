@@ -54,44 +54,44 @@ q-layout(view="lHh Lpr lFf")
       router-view
 </template>
 
-  <script>
-  import { defineComponent, ref } from 'vue'
-  import { authStore } from 'src/stores/auth'
-  import EssentialLink from 'components/EssentialLink.vue'
+<script>
+import { defineComponent, ref } from 'vue'
+import { authStore } from 'src/stores/auth'
+import EssentialLink from 'components/EssentialLink.vue'
 
-  const linksList = [
-    {
-      title: 'Login',
-      caption: 'login',
-      icon: 'login',
-      link: '/login'
-    },
-    {
-      title: 'Logout',
-      caption: 'logout',
-      icon: 'exit_to_app',
-      link: '/logout'
-    }
-  ]
+const linksList = [
+  {
+    title: 'Login',
+    caption: 'login',
+    icon: 'login',
+    link: '/login'
+  },
+  {
+    title: 'Logout',
+    caption: 'logout',
+    icon: 'exit_to_app',
+    link: '/logout'
+  }
+]
 
-  export default defineComponent({
-    name: 'MainLayout',
+export default defineComponent({
+  name: 'MainLayout',
 
-    components: {
-      EssentialLink
-    },
+  components: {
+    EssentialLink
+  },
 
-    setup () {
-      const leftDrawerOpen = ref(false)
-      const auth = authStore()
-      return {
-        essentialLinks: linksList,
-        auth,
-        leftDrawerOpen,
-        toggleLeftDrawer () {
-          leftDrawerOpen.value = !leftDrawerOpen.value
-        }
+  setup() {
+    const leftDrawerOpen = ref(false)
+    const auth = authStore()
+    return {
+      essentialLinks: linksList,
+      auth,
+      leftDrawerOpen,
+      toggleLeftDrawer() {
+        leftDrawerOpen.value = !leftDrawerOpen.value
       }
     }
-  })
-  </script>
+  }
+})
+</script>
