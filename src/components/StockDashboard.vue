@@ -11,7 +11,7 @@
 import EntradaSaidaEstoqueUsuario from 'components/EntradaSaidaEstoqueUsuario.vue';
 import EntradaSaidaEstoqueProduto from 'components/EntradaSaidaEstoqueProduto.vue';
 import TopProdutosMaisEstoque from 'components/TopProdutosMaisEstoque.vue';
-import TopProdutosMenosEstoque from 'components/TopProdutosMaisEstoque.vue';
+import TopProdutosMenosEstoque from 'components/TopProdutosMenosEstoque.vue';
 
 export default {
   components: {

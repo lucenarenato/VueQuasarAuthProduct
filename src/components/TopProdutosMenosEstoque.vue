@@ -9,6 +9,8 @@
 
 <script>
 import ChartComponent from './ChartComponent.vue';
+import { axiosInstance } from 'boot/axios';
+import Swal from 'sweetalert2';
 
 export default {
   name: 'TopProdutosMenosEstoque',
@@ -18,7 +20,7 @@ export default {
       series: [
         {
           name: 'Quantidade em Estoque',
-          data: [10, 15, 20, 25, 30, 35, 40, 45, 50, 55]
+          data: [] // Inicialmente vazio, será preenchido após a requisição
         }
       ],
       options: {
@@ -26,10 +28,54 @@ export default {
           type: 'bar'
         },
         xaxis: {
-          categories: ['Produto K', 'Produto L', 'Produto M', 'Produto N', 'Produto O', 'Produto P', 'Produto Q', 'Produto R', 'Produto S', 'Produto T']
+          categories: [] // Inicialmente vazio, será preenchido após a requisição
         }
       }
     };
+  },
+  mounted() {
+    this.fetchData(); // Chama a função para buscar os dados quando o componente é montado
+  },
+  methods: {
+    async fetchData() {
+      try {
+        const response = await axiosInstance.get('/stock/statistics');
+
+        // Acessa os dados do produto a partir da resposta da API
+        const data = response.data.top_products_with_most_stock;
+
+        // Verifica se os dados existem e estão no formato esperado
+        if (Array.isArray(data) && data.length > 0) {
+          // Ordena os produtos por quantidade em estoque em ordem crescente e pega os 10 primeiros
+          const bottomProducts = data.sort((a, b) => a.total_quantity - b.total_quantity).slice(0, 10);
+
+          // Processa os dados para preencher as séries e categorias do gráfico
+          const categories = bottomProducts.map(item => item.product.title); // Extraindo os títulos dos produtos
+          const stockData = bottomProducts.map(item => parseInt(item.total_quantity)); // Extraindo a quantidade em estoque
+
+          // Atualiza as séries de dados do gráfico
+          this.series[0].data = stockData;
+
+          // Atualiza as categorias no eixo x do gráfico
+          this.options.xaxis.categories = categories;
+        } else {
+          // Tratamento de erro para caso os dados não estejam no formato esperado
+          Swal.fire({
+            icon: 'error',
+            title: 'Erro ao carregar dados',
+            text: 'Os dados recebidos da API estão vazios ou em um formato inesperado.'
+          });
+        }
+      } catch (error) {
+        // Tratamento de erro para a requisição da API
+        Swal.fire({
+          icon: 'error',
+          title: 'Erro',
+          text: 'Não foi possível carregar os dados dos produtos com menos estoque.'
+        });
+        console.error('Erro ao buscar dados da API:', error);
+      }
+    }
   }
 };
 </script>
